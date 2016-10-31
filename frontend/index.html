@@ -4,9 +4,9 @@
 	<title>Ace Portal</title>
 	<meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="LostFound @ VIPS">
- 	<meta property="og:title" content="Portal -- VIPS" />
- 	<meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
+	<meta name="author" content="ACE Library Portal @ VIPS">
+ 	<meta property="og:title" content="Library Portal -- VIPS" />
+ 	<meta property="og:description" content="A portal to find code and tech related resources for VSIT students." />
  	<link rel="icon" href="img/logo.png"> 
  	
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
@@ -26,7 +26,7 @@
 					</h1>
 					<hr class="aceLine">
 					<br>
-					<button class="ui blueCol large button">Start Exploring</button>
+					<button class="ui blueCol large button login-modal">Start Exploring</button>
 				</div>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 				<center>
 					<img src="img/logo.png" class="img-logo-phn">
 					<h1 class="aceHead-phn">ACE LOGIC BOMBS</h1>
-					<button class="ui blueColLight large button">Start Exploring</button>
+					<button class="ui blueColLight large button login-modal">Start Exploring</button>
 				</center>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 						<i>"Get ready to learn the most exciting and most adventurous things from this portal.<br>
 						So, tie up your laces and start exploring." </i>
 					</h1>
-					<button class="ui blueCol large button">Start Exploring</button>
+					<button class="ui blueCol large button login-modal">Start Exploring</button>
 				</div>
 			</div>
 		</div>
@@ -246,6 +246,23 @@
 	</nav>
 	<!-- navigation ends-->	
 
+	<!-- login modal -->
+	<div class="ui basic modal">
+		<center>
+			<img src="img/logo.png" class="img-logo-modal">
+			<div class="image content">
+				<form action="#" method="post"> 
+					<input type="text" class="login-user" placeholder="Username" name="username"><br><br>
+				   	<input type="text" class="login-user" placeholder="Password" name="pwd"><br><br>
+				   	<input type="submit" class="login-submit" placeholder="Username" name="submit" value="Login">
+				</form>
+				<br><br>
+				<a href="#" class="close-modal">Close</a>
+			</div>
+		</center>
+	</div>	
+	<!-- login modal ends -->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
 	<script type="text/javascript">
@@ -264,6 +281,15 @@
 		$(document).ready(function(){
 			$('.nav-close').click(function(){
 				$('nav') .transition('fade down'); 
+			});
+		});	
+
+		$(document).ready(function(){
+			$('.login-modal').click(function(){
+				$('.ui.basic.modal').modal('show'); 
+			});
+			$('.close-modal').click(function(){
+				$('.ui.basic.modal').modal('hide'); 
 			});
 		});	
 	</script>
