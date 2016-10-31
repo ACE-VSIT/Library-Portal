@@ -2,17 +2,19 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
+from .models import Problem
 
 
 # Create your views here.
 
-def home_page(request):
-	return render(request, 'acelibraryapp/home_page.html', {})
+def index(request):
+	return render(request, 'acelibraryapp/index.html', {})
 
 
 @login_required
-def Tasks(request):
-	return render(request,'acelibraryapp/tasks.html',{})
+def home(request):
+
+	return render(request,'acelibraryapp/home.html',{})
 
 
 def member_login(request):
@@ -24,10 +26,21 @@ def member_login(request):
 		if user is not None:
 			if user.is_active:
 				login(request, user)
-				return redirect('acelibraryapp.views.Tasks')
+				return redirect('acelibraryapp.views.home')
 			else:
 				print("Disabled account")
 		else:
 			print("Invalid login")
 
-	return render(request, 'acelibraryapp/login.html', {})
+	return render(request, 'acelibraryapp/index.html', {})
+
+
+def showTasks(request):
+
+	tasks = Problem.objects.filter(approval_status=True)
+
+	return render(request, 'acelibraryapp/tasks.html',{'tasks':tasks})
+
+
+
+
