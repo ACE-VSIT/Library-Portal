@@ -146,6 +146,51 @@ a, a:hover, a:focus, a:clicked {
   	text-align: center;
 }
 
+.img-logo-modal{
+	width:100px;
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+.login-user {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid #52c59a;
+	background: transparent;
+	color: #52c59a;
+	font-size:18px;
+	padding: 10px 15px;
+}
+
+.ui.dimmer {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.login-submit {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid #105d42;
+	background: rgba(82, 197, 154, 1);
+	color: #fff;
+	font-size:18px;
+	padding: 10px 15px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 
+}
+
+.login-submit:hover {
+	background: rgba(82, 197, 154, 0.4);
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 
+}
+
+a.close-modal {
+	color:white;
+}
 .burNav {
   	color: #52c59a;
   	position: absolute;
@@ -320,5 +365,16 @@ nav .nav-rel {
 		margin-left: 10px;
 		font-size:40px;
 		line-height: 1;
+	}
+
+	.login-submit, .login-user {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width:500px)
+{
+	.login-submit, .login-user {
+		width: 95%;
 	}
 }
