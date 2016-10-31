@@ -12,6 +12,7 @@ def home_page(request):
 
 @login_required
 def Tasks(request):
+
 	return render(request,'acelibraryapp/tasks.html',{})
 
 
