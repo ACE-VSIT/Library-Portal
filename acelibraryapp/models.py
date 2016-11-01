@@ -22,3 +22,18 @@ class Problem(models.Model):
 
     def _str_(self):
         return self.title
+
+class Attendance(models.Model):
+    person_name = models.CharField(max_length=200)        
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    agenda = models.CharField(max_length=200)
+    event_name = models.CharField(max_length=200)
+    attendance_status =   models.BooleanField(default=False)                                   
+
+    def record(self):
+        self.created_date = timezone.now()
+        self.save()
+
+    def _str_(self):
+        return self.attendance_status        
