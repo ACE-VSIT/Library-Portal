@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre|Montserrat:700');
 @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre');
-@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:700');
+
+@font-face {
+    font-family: play;
+    src: url('../fonts/play.woff2');
+}
 
 body {
 	color: white;
@@ -29,10 +33,10 @@ a, a:hover, a:focus, a:clicked {
 }
 
 .nav-segment a {
-	font-family: 'Old Standard TT';
+	font-family: 'play';
   	font-size: 70px;
   	line-height: 56px;
-  	font-weight: 700;
+  	font-weight: 400;
   	color: white;
   	margin-left: 100px;
   	line-height: 1.2;
@@ -83,10 +87,10 @@ a, a:hover, a:focus, a:clicked {
 }
 
 .aceHead {
-  	font-family: 'Old Standard TT';
+  	font-family: 'play';
   	font-size: 60px;
   	line-height: 56px;
-  	font-weight: 700;
+  	font-weight: 400;
   	color: white;
 }
 
