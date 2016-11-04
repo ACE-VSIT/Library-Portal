@@ -1,0 +1,4 @@
+{% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}'
+{% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %}
+
+This is you Home Page , jo karna karo yahaan
