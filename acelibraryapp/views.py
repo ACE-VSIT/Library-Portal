@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .models import Problem
+from .models import Tasks
 
 
 # Create your views here.
@@ -34,13 +34,58 @@ def member_login(request):
 
 	return render(request, 'acelibraryapp/index.html', {})
 
-
+@login_required
 def showTasks(request):
 
-	tasks = Problem.objects.filter(approval_status=True)
+	tasks = Tasks.objects.filter(approval_status=True)
 
 	return render(request, 'acelibraryapp/tasks.html',{'tasks':tasks})
 
 
+@login_required
+def getTasks(request, task):
+
+	if request.method =="POST":
+		#run query to insert task as a new row in Task Table
+		# save and commit the changes
+		return task
+
+'''
+@login_required
+def getAttendance(request):
+
+	if request.method == "POST":
+		#Srijit kese dega ?
 
 
+@login_required
+def getResource(request):
+
+	if request.method=="POST":
+		# run query to insert new resource from user
+
+
+@login_required
+def showResources(request):
+	
+	if request.method=="POST":
+		#execute query to return all resources which are approved by admin
+
+
+@login_required
+def showAttendane(request):
+
+	# execute query to return attendance of "authenticated user" 
+
+
+@login_required
+def member_logout(request):
+
+	#add logic to logout the user
+
+
+def getSolution(request, solution):
+
+	#execute query to insert solution by authenticated user
+
+'''
