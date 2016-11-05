@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import Tasks
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -58,6 +58,7 @@ def member_logout(request):
 	logout(request)
 	# Take the user back to the homepage.
 	return HttpResponseRedirect('acelibraryapp/index.html')
+
 
 	
 
