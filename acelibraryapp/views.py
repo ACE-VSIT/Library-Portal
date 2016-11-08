@@ -1,12 +1,27 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import Tasks
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
 
 
 # Create your views here.
 
+
+def facebook_login(request):
+
+	#context = RequestContext(request,{'request': request,'user': request.user})
+
+	return render(request,'acelibraryapp/fblogin.html',{'request': request,'user': request.user})
+
+
+@login_required
 def index(request):
 	return render(request, 'acelibraryapp/index.html', {})
 
@@ -50,6 +65,19 @@ def getTasks(request, task):
 		# save and commit the changes
 		return task
 
+@login_required
+def member_logout(request):
+	logout(request)
+	# Take the user back to the homepage.
+	return HttpResponseRedirect('acelibraryapp/index.html')
+
+
+	
+
+
+
+
+
 '''
 @login_required
 def getAttendance(request):
@@ -78,10 +106,6 @@ def showAttendane(request):
 	# execute query to return attendance of "authenticated user" 
 
 
-@login_required
-def member_logout(request):
-
-	#add logic to logout the user
 
 
 def getSolution(request, solution):
