@@ -20,16 +20,16 @@ def index(request):
 	
 
 
-
-
-
-
 @login_required
 def home(request):
 
 	return render(request,'acelibraryapp/home.html',{})
+if request.method == "POST":
+		#Srijit kese dega ?
 
 
+@login_required
+de
 
 
 def member_login(request):

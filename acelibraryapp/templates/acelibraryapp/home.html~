@@ -1,6 +1,7 @@
 
 {% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}'
 
+<!--<li><a href="{% url 'acelibraryapp:logout' %}">Logout</a></li> -->
 
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %}
 

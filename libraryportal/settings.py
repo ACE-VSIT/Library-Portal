@@ -156,12 +156,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/logged-in/'
-LOGIN_ERROR_URL    = '/login-error/'
+#LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '1670330549945426'
 SOCIAL_AUTH_FACEBOOK_SECRET = '4151742a9a581dff2e2b969eb002c6de'
+LOGIN_REDIRECT_URL = '/home'
 
 
 # Static files (CSS, JavaScript, Images)
