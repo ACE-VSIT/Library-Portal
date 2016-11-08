@@ -155,7 +155,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-LOGIN_REDIRECT_URL ='/home/'
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1670330549945426'
+SOCIAL_AUTH_FACEBOOK_SECRET = '4151742a9a581dff2e2b969eb002c6de'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
