@@ -1,8 +1,8 @@
-{% extends 'acelibraryapp/base.html' %}
+{% extends 'fbauth/base.html' %}
 
 {% block main %}
  <div>
- <h1>authentication demo</h1>
+ <h1>ACE  LIBRARRY PORTAL </h1>
 
  <p>
    <ul>
