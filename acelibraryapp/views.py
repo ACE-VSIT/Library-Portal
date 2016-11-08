@@ -7,9 +7,21 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+
 
 # Create your views here.
 
+
+def facebook_login(request):
+
+	#context = RequestContext(request,{'request': request,'user': request.user})
+
+	return render(request,'acelibraryapp/fblogin.html',{'request': request,'user': request.user})
+
+
+@login_required
 def index(request):
 	return render(request, 'acelibraryapp/index.html', {})
 
