@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fhte1jt+(#k8v4(klnssye(_kc36-!3g!0r=%=js#)4@o@&1)v'
+SECRET_KEY = 'xyz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -126,9 +126,9 @@ SOCIAL_AUTH_LOGIN_URL = '/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1670330549945426'
+SOCIAL_AUTH_FACEBOOK_KEY = 'INSERT YOUR KEY'
 
-SOCIAL_AUTH_FACEBOOK_SECRET = '4151742a9a581dff2e2b969eb002c6de'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'INSERT YOUR SECERET'
 
 
 
