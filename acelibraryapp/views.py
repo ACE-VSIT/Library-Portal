@@ -32,16 +32,30 @@ class Authentication(View):
 	import json
 	''' Test if user is authorized to access library resources '''
 	def isMember(self,name):
-		#print (name)
+		print (name)
 		
 		with open('acelibraryapp/ace_membors.json') as json_data:
 			data = json.load(json_data)
 
-		if name in [name['name'] for name in data]:
+		data = (item for item in data if item["name"] == name).next()
+		if (data['valid'] ==3 or data['valid']==4) and name == data['name']:
 			return True
+		
 		return False
 
+	def fetchDetails(self,name):
+
+		with open('acelibraryapp/ace_membors.json') as json_data:
+			data = json.load(json_data)
+
+		data = (item for item in data if item["name"] == name).next()
+		if data['valid']==3: data['valid']='Core Member'
+		if data['valid']==4: data['valid']='Member'
+		return data
+
 	def get(self, request):
+
+		#name = str(request.user.first_name) + " " + str(request.user.last_name) #throws exception 
 
 		if request.user.is_active and self.isMember(str(request.user.first_name) + " " + str(request.user.last_name)):
 			return redirect('/home')
@@ -53,13 +67,34 @@ class Authentication(View):
 
 class HomePage(Authentication):
 
+	
+
 	def get(self, request):
 
-		if not self.isMember(str(request.user.first_name) + " " + str(request.user.last_name)):
+		name = str(request.user.first_name) + " " + str(request.user.last_name)
+
+		if not self.isMember(name):
 			auth_logout(request)
 			return redirect('/')
 
-		return render(request, 'acelibraryapp/home.html')
+			
+		return render(request, 'acelibraryapp/home.html', self.fetchDetails(name))
+
+
+
+@login_required(login_url='/')
+def resource(request):
+
+	# Insert query to get approved resource
+
+	return render(request,'acelibraryapp/resource.html',{})
+
+@login_required(login_url='/')
+def python(request):
+
+	# Insert query to get approved resource
+
+	return render(request,'acelibraryapp/python.html',{})
 
 '''
 @login_required(login_url='/')
