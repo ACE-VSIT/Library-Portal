@@ -18,6 +18,45 @@ class Student(models.Model):
     class Meta :
         ordering = ['name']
 
+'''
+id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `oauth_uid` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `api` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `pic_square` varchar(255) NOT NULL,
+  `course` varchar(10) DEFAULT NULL,
+  `semester` varchar(10) DEFAULT NULL,
+  `section` varchar(2) DEFAULT NULL,
+  `phone` varchar(12) DEFAULT NULL,
+  `valid` int(2) DEFAULT '0',
+
+
+
+'''
+
+class AceMembers(models.Model):
+
+    id = models.IntegerField(primary_key=True,default=0)
+    oauth_uid = models.PositiveIntegerField()
+    name = models.CharField(max_length =255, blank=False)
+    api = models.CharField(max_length =255,blank=False)
+    email = models.CharField(max_length =255,blank=False)
+    gender = models.CharField(max_length =50,blank=False)
+    pic_square = models.CharField(max_length =255,blank=False)
+    course = models.CharField(max_length =10,null=True)
+    semester = models.CharField(max_length =10,null=True)
+    section = models.CharField(max_length =2,null=True)
+    phone = models.CharField(max_length =12,null=True)
+    valid = models.PositiveIntegerField(default=0)
+
+
+
+
+
+
+
 
 
 class User(models.Model):
