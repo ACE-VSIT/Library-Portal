@@ -28,3 +28,17 @@ def tasks(request):
 
 	return render(request,'acelibraryapp/tasks.html',{})
 
+@login_required(login_url='/')
+def resource(request):
+
+	# Insert query to get approved resource
+
+	return render(request,'acelibraryapp/resource.html',{})
+
+@login_required(login_url='/')
+def python(request):
+
+	# Insert query to get approved resource
+
+	return render(request,'acelibraryapp/python.html',{})
+
