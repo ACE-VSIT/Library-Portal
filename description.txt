@@ -1,5 +1,28 @@
 //Add small discription of page here.
 
 
-Sno.                File name                    Tab Name                   Description
-1.                  
+Sno.                File name                    Tab Name                   	Description
+
+1.		 Home			  	Tasks				Think yourself as a genius?
+										Let's see if you can solve these tasks.
+
+2.		 Home				Attendance			The most important thing,"ATTENDANCE",check it here.
+
+3.		 Resources			UX design			
+
+4.		 Resources			Python				Learn one of the most simple language, that has helped creating some
+										of world's top websites
+
+5.		 Resources			Web				Get your ideas on the web before anyone else does it.
+										Start learning Web development right here, right now.
+
+6.		 Resources			Android				Want to create your own android apps or even the next android??
+										Learn everything you need to know here.
+
+7.		 Resources			C#				
+8.		 Resources			Game Dev			Ever wondered how games work??
+										Learn about them here.
+
+9.		 Resources			Graphics			Learn Graphic Designing, because text isn't enough, right?
+
+10.		 Resources			Audio Visual			Graphics don't seem satisfactory,learn the AV effets.
