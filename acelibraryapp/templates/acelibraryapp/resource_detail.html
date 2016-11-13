@@ -1,0 +1,72 @@
+{% extends 'acelibraryapp/base.html' %}
+<!-- {% load staticfiles %}
+{% if request.user.is_authenticated %}
+{% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
+<!--{% for task in tasks %}
+Title : {{ task.title }}
+<br>
+Description : {{task.text}}
+<br><br>
+{% endfor %} -->
+{% block content %}
+				
+
+				<h1 class="quote-head">Resource: {{category.category}}<br><span>Ace Logic Bombs</span></h1>
+				<br><br><br>
+
+				{%for resource in resources %}
+
+				<div class="ui stackable grid">
+					<div class="ui sixteen wide column task">
+						<div class="ui card" ">
+						  <div class="card">
+							<div class="abs-Lang">
+								<div class="code-Lang centered"><center>A</center></div>
+							</div>
+						    <div class="content">
+						      <div class="header"><h1>{{resource.course}}</h1></div>
+						      <div class="meta"><b>Author: {{resource.author}}</b></div>
+						      <br>
+						      <div class="description">
+									{{resource.couse_des}}
+						      </div><br>
+						      <button class="ui blue inverted medium button task-submit">View Resource</button>
+						      <br><br>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+
+{% endfor %}
+
+
+				
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace resource menu end -->
+S
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+								<a href="{% url 'resource' %}">Resources</a><br>
+								<a href="{% url 'home' %}" class="nav-close">Dashboard</a><br>
+								<a href="{% url 'auth:logout' %}?next={{ request.path }}" class="nav-close">Logout</a><br>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+
+	{% endblock %}

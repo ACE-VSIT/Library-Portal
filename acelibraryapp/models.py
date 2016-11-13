@@ -102,16 +102,31 @@ class Events(models.Model):
         return self.name
 
 
+class Categories(models.Model):
+
+
+    category = models.CharField(primary_key=True,max_length=30)
+    description = models.CharField(max_length=100)
+
+    
+    def _str_(self):
+
+        return self.category
+
+
 class Resources(models.Model):
 
     #category,url,topic,description 
-    course = models.CharField(max_length=30)  
+    cat = models.ForeignKey('Categories')
+    course = models.CharField(max_length=30)
+    category = models.CharField(max_length=30)  
     couse_diff = models.CharField(max_length=10)
     couse_des = models.TextField(max_length=50)
     link = models.CharField(max_length=50)
-    course_type =models.CharField(max_length=20)
     course_author = models.CharField(max_length=30)
     approval_status = models.BooleanField(default=False)
+
+
 
 
 '''
