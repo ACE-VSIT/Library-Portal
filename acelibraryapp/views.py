@@ -8,58 +8,77 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views import View
 import json
+from .models import Tasks
 
 # Create your views here.
 
-class TaskView(View):
-
-	def get_tasks():  
-		pass
-
-	def get(self, request):
-		#process request 
-		return render(request,'acelibraryapp/tasks.html',{})
-
 class Authentication(View):
-
-
-	def __init__(self):
-		
-		self.name = ''
-		self.email = ''
-		self.uid = ''		
-
-	import json
+	
+	data = {}
+	
 	''' Test if user is authorized to access library resources '''
-	def isMember(self,name):
-		#print (name)
+	def isMember(self,name):	
 		
 		with open('acelibraryapp/ace_membors.json') as json_data:
 			data = json.load(json_data)
-
-		if name in [name['name'] for name in data]:
+		data = (item for item in data if item["name"] == name).next()
+		if (data['valid'] ==3 or data['valid']==4) and name == data['name']:
 			return True
 		return False
 
-	def get(self, request):
+	def fetchDetails(self,name):
 
+		with open('acelibraryapp/ace_membors.json') as json_data:
+			data = json.load(json_data)
+		data = (item for item in data if item["name"] == name).next()
+		if data['valid']==3: data['valid']='Core Member'
+		if data['valid']==4: data['valid']='Member'
+		return data
+
+	def get(self, request):
+		#name = str(request.user.first_name) + " " + str(request.user.last_name) #throws exception 
 		if request.user.is_active and self.isMember(str(request.user.first_name) + " " + str(request.user.last_name)):
+			Authentication.data = self.fetchDetails(str(request.user.first_name) + " " + str(request.user.last_name)) 			
 			return redirect('/home')
 		else :
 			auth_logout(request)
-
 		return render(request,'acelibraryapp/index.html',{'user': request.user,'user': request.user})
 
 
 class HomePage(Authentication):
 
+	
 	def get(self, request):
 
-		if not self.isMember(str(request.user.first_name) + " " + str(request.user.last_name)):
+		name = str(request.user.first_name) + " " + str(request.user.last_name)
+		#print Authentication.data
+		if not self.isMember(name):
 			auth_logout(request)
 			return redirect('/')
 
-		return render(request, 'acelibraryapp/home.html')
+		return render(request, 'acelibraryapp/home.html', Authentication.data)
+
+
+class Resources(Authentication):
+
+	def fetch_resouces():
+		pass
+
+	def get(self, request):
+		return render(request,'acelibraryapp/resource.html',Authentication.data)
+
+
+class TaskView(Authentication):
+
+	def fetch_tasks(self):  
+		tasks = Tasks.objects.filter(approval_status=True)
+		return tasks
+
+	def get(self, request):
+		
+		Authentication.data['tasks']= self.fetch_tasks()
+		
+		return render(request,'acelibraryapp/tasks.html',Authentication.data)
 
 '''
 @login_required(login_url='/')
@@ -90,3 +109,11 @@ def tasks(request):
 	return render(request,'acelibraryapp/tasks.html',{})
 
 '''
+
+@login_required(login_url='/')
+def python(request):
+
+	name = str(request.user.first_name) + " " + str(request.user.last_name)
+	auth = Authentication()
+
+	return render(request,'acelibraryapp/python.html',Authentication.fetchDetails(auth,name))

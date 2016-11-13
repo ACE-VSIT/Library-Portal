@@ -54,11 +54,6 @@ class AceMembers(models.Model):
 
 
 
-
-
-
-
-
 class User(models.Model):
 
     #enroll_number(foreign key), date of joining, ifACE, ifCore, domain , contact
@@ -107,7 +102,6 @@ class Events(models.Model):
         return self.name
 
 
-
 class Resources(models.Model):
 
     #category,url,topic,description 
@@ -120,23 +114,29 @@ class Resources(models.Model):
     approval_status = models.BooleanField(default=False)
 
 
-
-
 '''
-class Attendance(models.Model):
-
-    #user_id(foreign key),#event_id(foreign key), attendance(String)
-
-
 
 class Solutions(models.Model)
     #Task if ( foreign key), solution , submitted by(defaut shud be autehnticated user),date_of submission
 
 
-
-
 '''
+class Attendance(models.Model):
+    person_name = models.CharField(max_length=200)                
+    attendance_status =   models.BooleanField(default=False)                                   
+
+
+    def _str_(self):
+        return self.attendance_status        
+
+
+class EventNameDate(models.Model):
+    event_name = models.CharField(max_length=200)
+    date_id = models.IntegerField(default=0)
+    created_date = models.DateTimeField(default=timezone.now)
 
 
 
-
+    def record(self):
+        self.created_date = timezone.now()
+        self.save()

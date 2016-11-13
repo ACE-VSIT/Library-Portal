@@ -1,0 +1,231 @@
+{% extends 'acelibraryapp/base.html' %}
+<!-- {% load staticfiles %}
+{% if request.user.is_authenticated %}
+{% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
+
+{% block content %}
+				<h1 class="quote-head">Ace Resource Manager<br><span>Ace Logic Bombs</span></h1>
+				<br><br><br>
+
+				<div class="ui stackable grid">
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="ux.html"><div class="ui inverted teal button">UX Design</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/ux.png' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="ux.html" class="header">UX Design</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="python.html"><div class="ui inverted teal button">Python</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/py.png' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="python.html" class="header">Python</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="web.html"><div class="ui inverted teal button">Web</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/web.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="web.html" class="header">Web</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="android.html"><div class="ui inverted teal button">Android</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/and.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="android.html" class="header">Android</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="csharp.html"><div class="ui inverted teal button">C#</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/csharp.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="csharp.html" class="header">C#</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="game.html"><div class="ui inverted teal button">Game Dev</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/game.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="game.html" class="header">Game Dev</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="graphic.html"><div class="ui inverted teal button">Graphic Design</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/graphic.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="graphic.html" class="header">Graphics</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				<div class="ui four wide column">
+					<div class="ui special cards">
+					  	<div class="card">
+						    <div class="blurring dimmable image">
+						    <div class="ui dimmer">
+						        <div class="content">
+						        	<div class="center">
+						            	<a href="av.html"><div class="ui inverted teal button">Audio Visual</div></a>
+						          	</div>
+						        </div>
+						    </div>
+						    
+						    <img src="{% static 'img/av.jpg' %}">
+						    </div>
+
+						    <div class="content left-align">
+						    	<a href="av.html" class="header">Audio Visual</a>
+						        <div class="meta">
+						        	<span class="date">Add a description add a description add a description</span>
+						      	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- ace dashboard element end -->
+
+	<!-- nav -->
+	<nav class="transition hidden">
+		<div class="centered nav">
+			<div class="center-area">
+				<div class="centered nav-segment">
+					<div class="ui stackable relaxed grid">
+						<div class="ui row">
+							<div class="ui sixteen wide column">
+								<a class="active">Resources</a><br>
+								<a href="{% url 'home' %}" class="nav-close">Dashboard</a><br>
+								<a href="{% url 'auth:logout' %}?next={{ request.path }}" class="nav-close">Logout</a><br>		
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
+		</div>
+	</nav>
+	<!-- nav end -->
+{% endblock %}
