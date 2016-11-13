@@ -54,11 +54,6 @@ class AceMembers(models.Model):
 
 
 
-
-
-
-
-
 class User(models.Model):
 
     #enroll_number(foreign key), date of joining, ifACE, ifCore, domain , contact
@@ -105,7 +100,6 @@ class Events(models.Model):
 
     def _str_(self):
         return self.name
-
 
 
 class Resources(models.Model):

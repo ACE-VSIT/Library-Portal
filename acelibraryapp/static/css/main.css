@@ -171,22 +171,65 @@ a, a:hover, a:focus, a:clicked {
 	background: rgba(0, 0, 0, 0.9);
 }
 
-.login-submit {
+
+.facebook-col {
 	width:370px;
 	height:50px;
 	border-radius: 7px;
-	border:1px solid #105d42;
-	background: rgba(82, 197, 154, 1);
+	border:1px solid rgba(59, 89, 152, 1);
+	background: rgba(59, 89, 152, 1);
 	color: #fff;
 	font-size:18px;
 	padding: 10px 15px;
 	-webkit-transition:0.5s;
 	-moz-transition:0.5s;
+	transition:0.5s; 	
+}
+
+.facebook-col:hover {
+	background: rgba(59, 89, 152, 0.4);
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
 	transition:0.5s; 
 }
 
-.login-submit:hover {
-	background: rgba(82, 197, 154, 0.4);
+.google-col {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid rgba(211, 72, 54, 1);
+	background: rgba(211, 72, 54, 1);
+	color: #fff;
+	font-size:18px;
+	padding: 10px 15px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 	
+}
+
+.google-col:hover {
+	background: rgba(211, 72, 54, 0.4);
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 
+}
+
+.twitter-col {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid rgba(85, 172, 238, 1);
+	background: rgba(85, 172, 238, 1);
+	color: #fff;
+	font-size:18px;
+	padding: 10px 15px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 	
+}
+
+.twitter-col:hover {
+	background: rgba(85, 172, 238, 0.4);
 	-webkit-transition:0.5s;
 	-moz-transition:0.5s;
 	transition:0.5s; 

@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-from acelibraryapp.views import TaskView,Authentication, HomePage
+from acelibraryapp.views import TaskView,Authentication, HomePage,Resources
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -11,6 +11,9 @@ urlpatterns = [
     url(r'^home/$',login_required(login_url='/')(HomePage.as_view()),name='home'),
     #url(r'^home/tasks', views.tasks, name='tasks'),
     url(r'^home/tasks',login_required(login_url='/')(TaskView.as_view()),name='tasks'),
+    #url(r'^home/resource', views.resource, name='resource'),
+    url(r'^home/resource', login_required(login_url='/')(Resources.as_view()) , name= 'resource'),
+    url(r'^home/python', views.python, name='python'),
 
 
     #TODO : Add routes for other pages
