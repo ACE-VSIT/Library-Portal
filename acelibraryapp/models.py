@@ -117,20 +117,26 @@ class Resources(models.Model):
 
 
 '''
-class Attendance(models.Model):
-
-    #user_id(foreign key),#event_id(foreign key), attendance(String)
-
-
 
 class Solutions(models.Model)
     #Task if ( foreign key), solution , submitted by(defaut shud be autehnticated user),date_of submission
 
 
-
-
 '''
+class Attendance(models.Model):
+    person_name = models.CharField(max_length=200)                
+    attendance_status =   models.BooleanField(default=False)                                   
+
+    def _str_(self):
+        return self.attendance_status        
 
 
+class EventNameDate(models.Model):            
+    event_name = models.CharField(max_length=200)
+	date_id	=	models.integerfield(default=0)
+    created_date = models.DateTimeField(
+    default=timezone.now)
 
-
+    def record(self):
+        self.created_date = timezone.now()
+        self.save()
