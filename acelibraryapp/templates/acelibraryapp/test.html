@@ -1,0 +1,36 @@
+{% extends 'acelibraryapp/base.html' %}
+{% load staticfiles %}
+{% block main %}
+
+  {% if user and not user.is_anonymous %}
+  	<!-- Ashish add a redirection to home.html page when user is not anonymous -->
+
+  {% else %}
+  <!-- login modal -->
+  <div class="ui basic modal">
+    <center>
+      <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
+      <div class="image content"> 
+        <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><button class="facebook-col"><i class="facebook icon"></i> Login With Facebook</button></a><br><br>
+        <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}"><button class="google-col"><i class="google plus icon"></i> Login With Google</button></a><br><br>
+        <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><button class="twitter-col"><i class="twitter icon"></i> Login With Twitter</button></a><br><br>
+        <br><br>
+        <a href="#" class="close-modal">Close</a>
+      </div>
+    </center>
+  </div>  
+  <!-- login modal ends -->
+  {% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+base.html
+  {% block main %} {% endblock %}

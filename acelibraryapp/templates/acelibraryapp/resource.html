@@ -1,15 +1,22 @@
 {% extends 'acelibraryapp/base.html' %}
+{% load staticfiles %}
+{% block main %}
 <!-- {% load staticfiles %}
 {% if request.user.is_authenticated %}
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
 
-{% block content %}
+	<!-- ace resource element -->
+	<div class="ui container">
+		<div class="ui stackable grid">
+			<div class="ui row" style="padding:80px 0px;">
+			<div class="ui sixteen wide column" style="text-align:center;">
+				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
 				<h1 class="quote-head">Ace Resource Manager<br><span>Ace Logic Bombs</span></h1>
 				<br><br><br>
 
 				<div class="ui stackable grid">
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -26,14 +33,14 @@
 						    <div class="content left-align">
 						    	<a href="ux.html" class="header">UX Design</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Learn how to enhance user satisfaction with your product by improving the usability and accessibility of the product.</span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -50,14 +57,14 @@
 						    <div class="content left-align">
 						    	<a href="python.html" class="header">Python</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Learn one of the most simple language, that has helped creating different domains of CS.<br><br></span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -74,14 +81,14 @@
 						    <div class="content left-align">
 						    	<a href="web.html" class="header">Web</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Get your ideas on the web before anyone else does it. Start learning Web development right here, right now.</span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -98,14 +105,14 @@
 						    <div class="content left-align">
 						    	<a href="android.html" class="header">Android</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Want to create your own android apps or even the next android? Learn everything you need to know here.<br><br></span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -122,14 +129,14 @@
 						    <div class="content left-align">
 						    	<a href="csharp.html" class="header">C#</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">A full turing language up for grabs; with a whole lot of features & libraries you can play with.</span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -146,14 +153,14 @@
 						    <div class="content left-align">
 						    	<a href="game.html" class="header">Game Dev</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Ever wondered how games work? Learn about them here.<br><br></span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -170,14 +177,14 @@
 						    <div class="content left-align">
 						    	<a href="graphic.html" class="header">Graphics</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Learn Graphic Designing, because text isn't enough, right?<br><br></span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
-					<div class="ui special cards">
+					<div class="ui special centered cards">
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -194,7 +201,7 @@
 						    <div class="content left-align">
 						    	<a href="av.html" class="header">Audio Visual</a>
 						        <div class="meta">
-						        	<span class="date">Add a description add a description add a description</span>
+						        	<span class="date">Graphics don't seem satisfactory,learn the AV effets.<br><br></span>
 						      	</div>
 						    </div>
 					  	</div>
@@ -206,7 +213,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- ace dashboard element end -->
+	<!-- ace resource element end -->
 
 	<!-- nav -->
 	<nav class="transition hidden">
@@ -228,4 +235,5 @@
 		</div>
 	</nav>
 	<!-- nav end -->
-{% endblock %}
+
+	{% endblock %}
