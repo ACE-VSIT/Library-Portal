@@ -119,7 +119,7 @@ class Resources(models.Model):
     #category,url,topic,description 
     cat = models.ForeignKey('Categories')
     course = models.CharField(max_length=30)
-    category = models.CharField(max_length=30)  
+      
     couse_diff = models.CharField(max_length=10)
     couse_des = models.TextField(max_length=50)
     link = models.CharField(max_length=50)

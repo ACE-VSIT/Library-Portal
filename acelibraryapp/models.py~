@@ -18,6 +18,40 @@ class Student(models.Model):
     class Meta :
         ordering = ['name']
 
+'''
+id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `oauth_uid` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `api` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `pic_square` varchar(255) NOT NULL,
+  `course` varchar(10) DEFAULT NULL,
+  `semester` varchar(10) DEFAULT NULL,
+  `section` varchar(2) DEFAULT NULL,
+  `phone` varchar(12) DEFAULT NULL,
+  `valid` int(2) DEFAULT '0',
+
+
+
+'''
+
+class AceMembers(models.Model):
+
+    id = models.IntegerField(primary_key=True,default=0)
+    oauth_uid = models.PositiveIntegerField()
+    name = models.CharField(max_length =255, blank=False)
+    api = models.CharField(max_length =255,blank=False)
+    email = models.CharField(max_length =255,blank=False)
+    gender = models.CharField(max_length =50,blank=False)
+    pic_square = models.CharField(max_length =255,blank=False)
+    course = models.CharField(max_length =10,null=True)
+    semester = models.CharField(max_length =10,null=True)
+    section = models.CharField(max_length =2,null=True)
+    phone = models.CharField(max_length =12,null=True)
+    valid = models.PositiveIntegerField(default=0)
+
+
 
 
 class User(models.Model):
@@ -68,36 +102,56 @@ class Events(models.Model):
         return self.name
 
 
+class Categories(models.Model):
+
+
+    category = models.CharField(primary_key=True,max_length=30)
+    description = models.CharField(max_length=100)
+
+    
+    def _str_(self):
+
+        return self.category
+
 
 class Resources(models.Model):
 
     #category,url,topic,description 
-    course = models.CharField(max_length=30)  
+    cat = models.ForeignKey('Categories')
+    course = models.CharField(max_length=30)
+    category = models.CharField(max_length=30)  
     couse_diff = models.CharField(max_length=10)
     couse_des = models.TextField(max_length=50)
     link = models.CharField(max_length=50)
-    course_type =models.CharField(max_length=20)
     course_author = models.CharField(max_length=30)
     approval_status = models.BooleanField(default=False)
 
 
 
 
-
-class Attendance(models.Model):
-
-    #user_id(foreign key),#event_id(foreign key), attendance(String)
-
-
+'''
 
 class Solutions(models.Model)
     #Task if ( foreign key), solution , submitted by(defaut shud be autehnticated user),date_of submission
 
 
-
-
 '''
+class Attendance(models.Model):
+    person_name = models.CharField(max_length=200)                
+    attendance_status =   models.BooleanField(default=False)                                   
+
+
+    def _str_(self):
+        return self.attendance_status        
+
+
+class EventNameDate(models.Model):
+    event_name = models.CharField(max_length=200)
+    date_id = models.IntegerField(default=0)
+    created_date = models.DateTimeField(default=timezone.now)
 
 
 
-
+    def record(self):
+        self.created_date = timezone.now()
+        self.save()
