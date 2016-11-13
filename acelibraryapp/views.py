@@ -21,7 +21,7 @@ class Authentication(View):
 		
 		with open('acelibraryapp/ace_membors.json') as json_data:
 			data = json.load(json_data)
-		data = (item for item in data if item["name"] == name).__next__()
+		data = (item for item in data if item["name"] == name).next()
 		if (data['valid'] ==3 or data['valid']==4) and name == data['name']:
 			return True
 		return False
@@ -30,7 +30,7 @@ class Authentication(View):
 
 		with open('acelibraryapp/ace_membors.json') as json_data:
 			data = json.load(json_data)
-		data = (item for item in data if item["name"] == name).__next__()
+		data = (item for item in data if item["name"] == name).next()
 		if data['valid']==3: data['valid']='Core Member'
 		if data['valid']==4: data['valid']='Member'
 		return data
@@ -47,8 +47,6 @@ class Authentication(View):
 
 class HomePage(Authentication):
 
-	def __init__(self):
-		self.name=''
 	
 	def get(self, request):
 
@@ -59,6 +57,7 @@ class HomePage(Authentication):
 			return redirect('/')
 
 		return render(request, 'acelibraryapp/home.html', Authentication.data)
+
 
 class Resources(Authentication):
 
