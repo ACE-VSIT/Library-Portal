@@ -58,6 +58,8 @@ Description : {{task.text}}
 				<h1 class="quote-head">Ace Task Manager<br><span>Ace Logic Bombs</span></h1>
 				<br><br><br>
 
+		{% for task in tasks %}
+
 				<div class="ui stackable grid">
 					<div class="ui sixteen wide column task">
 						<div class="ui card" ">
@@ -65,18 +67,13 @@ Description : {{task.text}}
 							<div class="abs-Lang">
 								<div class="code-Lang centered"><center>C</center></div>
 							</div>
+						
 						    <div class="content">
-						      <div class="header"><h1>Jumping Bunnies</h1></div>
-						      <div class="meta"><b>Language: C</b></div>
+						      <div class="header"><h1>{{task.title}}</h1></div>
+						      <div class="meta"><b>Published : {{task.published_date}}</b></div>
 						      <br>
 						      <div class="description">
-						        Bunnies are very cute animals who likes to jump a lot. Every bunny has his own range of jump. Lets say there are bunnies and bunny jumps units. Consider a 1-D plane, where initially bunnies are at . All of them starts jumping in forward direction.
-
-								For example, consider the case of bunny. Initially he is at . After first jump, he will be at point . After second, he will be at and so on. After jump, he will be at point .
-
-								Two bunnies can only meet each other when they are on the ground. When on the ground, a bunny can wait any amount of time. Being a social animal, all of them decide to meet at the next point where all of them will be on the ground. You have to find the nearest point where all the bunnies can meet.
-
-								For example, if there are bunnies where , , . Nearest point where all bunnies can meet again is at . First bunny has to jump six times, for second it is times and for third it is times. 
+						        {{task.text}} 
 						      </div><br>
 						      <button class="ui blue inverted medium button task-submit">Submit Your Entry</button>
 						      <br><br>
@@ -86,68 +83,8 @@ Description : {{task.text}}
 					</div>
 				</div>
 
-
-				<div class="ui stackable grid">
-					<div class="ui sixteen wide column task">
-						<div class="ui card" ">
-						  <div class="card">
-							<div class="abs-Lang">
-								<div class="code-Lang centered"><center>J</center></div>
-							</div>
-						    <div class="content">
-						      <div class="header"><h1>Jumping Bunnies</h1></div>
-						      <div class="meta"><b>Language: JavaScript</b></div>
-						      <br>
-						      <div class="description">
-						        Bunnies are very cute animals who likes to jump a lot. Every bunny has his own range of jump. Lets say there are bunnies and bunny jumps units. Consider a 1-D plane, where initially bunnies are at . All of them starts jumping in forward direction.
-
-								For example, consider the case of bunny. Initially he is at . After first jump, he will be at point . After second, he will be at and so on. After jump, he will be at point .
-
-								Two bunnies can only meet each other when they are on the ground. When on the ground, a bunny can wait any amount of time. Being a social animal, all of them decide to meet at the next point where all of them will be on the ground. You have to find the nearest point where all the bunnies can meet.
-
-								For example, if there are bunnies where , , . Nearest point where all bunnies can meet again is at . First bunny has to jump six times, for second it is times and for third it is times. 
-						      </div><br>
-						      <button class="ui blue inverted medium button">Submit Your Entry</button>
-						      <br><br>
-						    </div>
-						  </div>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="ui stackable grid">
-					<div class="ui sixteen wide column task">
-						<div class="ui card" ">
-						  <div class="card">
-							<div class="abs-Lang">
-								<div class="code-Lang centered"><center>P</center></div>
-							</div>
-						    <div class="content">
-						      <div class="header"><h1>Jumping Bunnies</h1></div>
-						      <div class="meta"><b>Language: PHP</b></div>
-						      <br>
-						      <div class="description">
-						        Bunnies are very cute animals who likes to jump a lot. Every bunny has his own range of jump. Lets say there are bunnies and bunny jumps units. Consider a 1-D plane, where initially bunnies are at . All of them starts jumping in forward direction.
-
-								For example, consider the case of bunny. Initially he is at . After first jump, he will be at point . After second, he will be at and so on. After jump, he will be at point .
-
-								Two bunnies can only meet each other when they are on the ground. When on the ground, a bunny can wait any amount of time. Being a social animal, all of them decide to meet at the next point where all of them will be on the ground. You have to find the nearest point where all the bunnies can meet.
-
-								For example, if there are bunnies where , , . Nearest point where all bunnies can meet again is at . First bunny has to jump six times, for second it is times and for third it is times. 
-						      </div><br>
-						      <button class="ui blue inverted medium button">Submit Your Entry</button>
-						      <br><br>
-						    </div>
-						  </div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			</div>
-		</div>
-	</div>
+				{% endfor %}
+				
 	<!-- ace task menu end -->
 
 	<!-- nav -->

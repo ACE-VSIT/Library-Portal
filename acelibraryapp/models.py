@@ -114,8 +114,6 @@ class Resources(models.Model):
     approval_status = models.BooleanField(default=False)
 
 
-
-
 '''
 
 class Solutions(models.Model)
