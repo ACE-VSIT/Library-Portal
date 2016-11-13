@@ -1,78 +1,94 @@
-{%load staticfiles %}
+{% load staticfiles %}
+
+<!-- {% load staticfiles %}
+{% if request.user.is_authenticated %}
+{% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ace Portal : Dashboard</title>
-	<meta charset="utf-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Ace Library Portal @ VIPS">
- 	<meta property="og:title" content="Portal -- VIPS" />
- 	<meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
- 	<link rel="icon" href="{% static 'img/logo.png' %}"> 
- 	
- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
-  	<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  <title>Ace Portal : Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ace Library Portal @ VIPS">
+  <meta property="og:title" content="Portal -- VIPS" />
+  <meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
+  <link rel="icon" href="{% static 'img/logo.png' %}"> 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
 </head>
 <body>
 
 
-	<!-- Hero Bg tab -->
-	<div class="ui stackable grid hero-hg">
-		<div class="ui row">
-		<div class="ui sixteen wide column hero-bg">
-			<img src="{% static 'img/logo.png' %}">
-			<h1><i class="content icon large burNav" id="navOpen"></i></h1>
-			<div class="userAbs">
-				<button class="ui teal inverted tiny button">{{valid}}</button><br><br>
-				<a href="#" class="user-main">{{ request.user.first_name }} {{request.user.last_name  }}</a>
-				<div class="ui feed">
-				<div class="event">
-				    <div class="content">
-				    <div class="summary"> 
-				        <a class="user">@ {{ request.user.username }}</a>
-				        <br> Score<div class="date">7/10</div>
-				    </div>
-				    </div>
-				</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
 
-	<!-- Hero Bg tab end -->
+  <!-- Hero Bg tab -->
+  <div class="ui stackable grid hero-hg">
+    <div class="ui row">
+    <div class="ui sixteen wide column hero-bg">
+      <img src="{% static 'img/logo.png' %}">
+      <h1><i class="content icon large burNav" id="navOpen"></i></h1>
+      <div class="userAbs">
+        <button class="ui teal inverted tiny button memType">{{valid}}</button><br><br>
+        <a href="#" class="user-main">{{ request.user.first_name }} {{request.user.last_name  }}</a>
+        <div class="ui feed">
+        <div class="event">
+            <div class="content">
+            <div class="summary"> 
+                <a class="user">@ {{ request.user.username }}</a>
+                <br> Score<div class="date">7/10</div>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 
-	<!-- ace dashboard element -->
-	<div class="ui container">
-		<div class="ui stackable grid">
-			<div class="ui row" style="padding:80px 0px;">
-			<div class="ui sixteen wide column" style="text-align:center;">
-				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+{% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}
+{% endif %}
 
-				{% block content %} {% endblock %}
+  <!-- Hero Bg tab end -->
+  {% block main %} {% endblock %}
 
+  <footer>
+    Made with ♥ by ACE
+  </footer>
 
-				<footer>
-		Made with ♥ by ACE
-	</footer>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
-	<script type="text/javascript">
-		$('.special.cards .image').dimmer({
-		  on: 'hover'
-		});
-		$(document).ready(function(){
-			$('#navOpen').click(function(){
-				$('nav') .transition('fade down'); 
-			});
-		});
-		$(document).ready(function(){
-			$('.nav-close').click(function(){
-				$('nav') .transition('fade down'); 
-			});
-		});	
-	</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
+  <script type="text/javascript">
+    $('.special.cards .image').dimmer({
+      on: 'hover'
+    });
+    $(document).ready(function(){
+      $('#navOpen').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    });
+    $(document).ready(function(){
+      $('.nav-close').click(function(){
+        $('nav') .transition('fade down'); 
+      });
+    }); 
+    $(document).ready(function(){
+      $('.attend').click(function(){
+        $('.ui.basic.modal.attendance-modal').modal('show'); 
+      });
+      $('.close-modal').click(function(){
+        $('.ui.basic.modal.attendance-modal').modal('hide'); 
+      });
+    });
+    $(document).ready(function(){
+      $('.feed').click(function(){
+        $('.ui.basic.modal.feedback-modal').modal('show'); 
+      });
+      $('.close-modal').click(function(){
+        $('.ui.basic.modal.feedback-modal').modal('hide'); 
+      });
+    });
+  </script>
 </body>
 </html>
