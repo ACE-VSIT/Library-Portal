@@ -28,7 +28,7 @@
 			<img src="{% static 'img/logo.png' %}">
 			<h1><i class="content icon large burNav" id="navOpen"></i></h1>
 			<div class="userAbs">
-				<button class="ui teal inverted tiny button">Core Member</button><br><br>
+				<button class="ui teal inverted tiny button">{{valid}}</button><br><br>
 				<a href="#" class="user-main">{{ request.user.first_name }} {{request.user.last_name  }}</a>
 				<div class="ui feed">
 				<div class="event">
@@ -47,7 +47,6 @@
 
 {% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}
 {% endif %}
-<a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
 
 	<!-- Hero Bg tab end -->
 
@@ -116,7 +115,7 @@
 						    <div class="ui dimmer">
 						        <div class="content">
 						        	<div class="center">
-						            	<div class="ui inverted teal button">Resources</div>
+						            	<a href="{% url 'resource' %}"><div class="ui inverted teal button">Resources</div></a>
 						          	</div>
 						        </div>
 						    </div>
@@ -125,7 +124,7 @@
 						    </div>
 
 						    <div class="content left-align">
-						    	<a class="header">Resources</a>
+						    	<a href="{% url 'resource' %}" class="header">Resources</a>
 						        <div class="meta">
 						        	<span class="date">A place where you can challenge yourself to gain multiple knowledge.</span>
 						      	</div>
@@ -176,9 +175,9 @@
 								<a class="active">Dashboard</a><br>
 								<a href="{% url 'tasks' %}" class="nav-close">Task</a><br>
 								<a href="#" class="nav-close">Attendance</a><br>
-								<a href="#" class="nav-close">Resource</a><br>
+								<a href="{% url 'resource' %}" class="nav-close">Resource</a><br>
 								<a href="#" class="nav-close">Feedback</a><br>
-								<a href="#" class="nav-close">Logout</a><br>							
+								<a href="{% url 'auth:logout' %}?next={{ request.path }}" class="nav-close">Logout</a><br>		
 							</div>
 						</div>
 					</div>
