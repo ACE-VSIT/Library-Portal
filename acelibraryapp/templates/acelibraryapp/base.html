@@ -5,7 +5,7 @@
   <title>Ace Portal</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="LostFound @ VIPS">
+  <meta name="author" content="Ace Library Portal @ VIPS">
   <meta property="og:title" content="Portal -- VIPS" />
   <meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
   <link rel="icon" href="{% static 'img/logo.png' %}"> 
@@ -248,25 +248,6 @@
     </div>
   </nav>
   <!-- navigation ends--> 
-
-  <!-- login modal -->
-  <div class="ui basic modal">
-    <center>
-      <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
-      <div class="image content"> 
-        <form action="#" method="post">
-           {%  csrf_token  %} 
-          <input type="text" class="login-user" placeholder="Username" name="username"><br><br>
-         <input type="text" class="login-user" placeholder="Password" name="password"><br><br>
-         
-            <input type="submit" class="login-submit" placeholder="Username" name="submit" value="Login">
-        </form>
-        <br><br>
-        <a href="#" class="close-modal">Close</a>
-      </div>
-    </center>
-  </div>  
-  <!-- login modal ends -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
