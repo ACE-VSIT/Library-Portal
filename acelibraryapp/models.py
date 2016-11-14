@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 # Create your models here.
 
@@ -53,24 +55,22 @@ class AceMembers(models.Model):
 
 
 
-
+'''
 class User(models.Model):
 
     #enroll_number(foreign key), date of joining, ifACE, ifCore, domain , contact
 
     enroll_number = models.ForeignKey(Student)
     join_date = models.DateTimeField(null=True)
-    ifACE = models.BooleanField()
-    ifCore = models.BooleanField()
     domain_choices= (('a','Programming'),('b','Web Development'),('c','Graphic Desgning'),('d','A/V Editing'),('e','Other'))
 
     domain = models.CharField(max_length=1,choices = domain_choices)
-
+'''
 
 
 class Tasks(models.Model):
     
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=69)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -82,7 +82,7 @@ class Tasks(models.Model):
         self.save()
 
 
-    def _str_(self):
+    def __unicode__(self) :
         return self.title
 
 
@@ -102,16 +102,36 @@ class Events(models.Model):
         return self.name
 
 
+class Categories(models.Model):
+
+
+    category = models.CharField(primary_key=True,max_length=30)
+    description = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ['category']
+
+
+    def __str__(self) :
+        return self.category
+
+
 class Resources(models.Model):
 
     #category,url,topic,description 
-    course = models.CharField(max_length=30)  
-    couse_diff = models.CharField(max_length=10)
-    couse_des = models.TextField(max_length=50)
-    link = models.CharField(max_length=50)
-    course_type =models.CharField(max_length=20)
-    course_author = models.CharField(max_length=30)
+    Category = models.ForeignKey('Categories')
+    Course = models.CharField(max_length=30)
+    Difficulty = models.IntegerField(default=1,validators=[MaxValueValidator(10), MinValueValidator(1)])  
+    Description = models.TextField(max_length=50)
+    URL = models.CharField(max_length=50)
+    Author = models.CharField(max_length=30)
     approval_status = models.BooleanField(default=False)
+
+ 
+    def __unicode__(self) :
+        return self.Course
+
+#ds
 
 
 '''
