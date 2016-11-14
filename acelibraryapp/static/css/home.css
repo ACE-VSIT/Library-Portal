@@ -173,7 +173,6 @@ footer {
 .task .ui.card {
 /*	box-shadow:0px 1px 3px 0px rgb(82, 197, 158), 0px 0px 0px 1px rgb(82, 197, 158);*/
 	width:100%;
-	cursor: pointer;
 }
 
 .taskSubmit {
@@ -218,6 +217,83 @@ footer {
 	color:white;
 }
 
+.img-logo-modal{
+	width:100px;
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+a.close-modal {
+	color:white;
+}
+
+.pri-color {
+	color:rgb(82, 197, 154);
+}
+
+.ui.dimmer {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.feedback-user {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid rgba(82, 197, 154, 1);
+	background: transparent;
+	color: rgba(82, 197, 154, 1);
+	font-size:18px;
+	padding: 10px 15px;
+}
+
+.feedback-user-text {
+	width:370px;
+	height:150px;
+	border-radius: 7px;
+	border:1px solid rgba(82, 197, 154, 1);
+	background: transparent;
+	color: rgba(82, 197, 154, 1);
+	font-size:18px;
+	padding: 10px 15px;
+	resize: none;
+}
+
+.feedback-submit {
+	width:370px;
+	height:50px;
+	border-radius: 7px;
+	border:1px solid #105d42;
+	background: rgba(82, 197, 154, 1);
+	color: #fff;
+	font-size:18px;
+	padding: 10px 15px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 
+}
+
+.feedback-submit:hover {
+	background: rgba(82, 197, 154, 0.4);
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	transition:0.5s; 
+}
+
+.ui.inverted.teal.button.memType {
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 2px rgb(82, 197, 154) inset !important;
+    color: rgb(82, 197, 154);
+    cursor: default;
+}
+
+<<<<<<< HEAD
+=======
+.ui.cards > .card > .image > img, .ui.card > .image > img {
+	width:290px;
+	height:225px;
+}
+
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 @media screen and (max-width:900px)
 {
 	.userAbs a.user-main  {
@@ -236,5 +312,19 @@ footer {
 		margin-left: 10px;
 		font-size:40px;
 		line-height: 1;
+	}
+	.feedback-submit, .feedback-user {
+		width: 70%;
+	}
+	.feedback-user-text {
+		width: 70%;
+		height: 150px;
+	}
+}
+
+@media screen and (max-width:500px)
+{
+	.feedback-submit, .feedback-user, .feedback-user-text {
+		width: 90%;
 	}
 }

@@ -1,54 +1,15 @@
+{% extends 'acelibraryapp/base.html' %}
+<<<<<<< HEAD
+
 <!-- {% load staticfiles %}
 {% if request.user.is_authenticated %}
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ace Portal : Dashboard</title>
-	<meta charset="utf-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Ace Library Portal @ VIPS">
- 	<meta property="og:title" content="Portal -- VIPS" />
- 	<meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
- 	<link rel="icon" href="{% static 'img/logo.png' %}"> 
- 	
- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
-  	<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
-</head>
-<body>
-
-
-
-	<!-- Hero Bg tab -->
-	<div class="ui stackable grid hero-hg">
-		<div class="ui row">
-		<div class="ui sixteen wide column hero-bg">
-			<img src="{% static 'img/logo.png' %}">
-			<h1><i class="content icon large burNav" id="navOpen"></i></h1>
-			<div class="userAbs">
-				<button class="ui teal inverted tiny button">{{valid}}</button><br><br>
-				<a href="#" class="user-main">{{ request.user.first_name }} {{request.user.last_name  }}</a>
-				<div class="ui feed">
-				<div class="event">
-				    <div class="content">
-				    <div class="summary"> 
-				        <a class="user">@ {{ request.user.username }}</a>
-				        <br> Score<div class="date">7/10</div>
-				    </div>
-				    </div>
-				</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
-
-{% if request.user.is_authenticated %}Welcome '{{ request.user.first_name }} {{request.user.last_name  }}
-{% endif %}
-
-	<!-- Hero Bg tab end -->
+{% block content %}
+=======
+{% load staticfiles %}
+{% block main %}
 
 	<!-- ace dashboard element -->
 	<div class="ui container">
@@ -56,12 +17,19 @@
 			<div class="ui row" style="padding:80px 0px;">
 			<div class="ui sixteen wide column" style="text-align:center;">
 				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 				<h1 class="quote-head">Dashboard Elements <br><span>Ace Logic Bombs</span></h1>
 				<br><br><br>
 
 				<div class="ui stackable grid">
+<<<<<<< HEAD
 				<div class="ui four wide column">
 					<div class="ui special cards">
+=======
+				<div class="row">
+				<div class="ui four wide column">
+					<div class="ui special centered cards">
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -78,20 +46,32 @@
 						    <div class="content left-align">
 						    	<a href="tasks.html" class="header">Task</a>
 						        <div class="meta">
+<<<<<<< HEAD
 						        	<span class="date">Add a description add a description add a description</span>
+=======
+						        	<span class="date">Think yourself as a genius? Let's see if you can solve these tasks.</span>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
+<<<<<<< HEAD
 					<div class="ui special cards">
+=======
+					<div class="ui special centered cards">
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
 						        <div class="content">
 						        	<div class="center">
+<<<<<<< HEAD
 						            	<div class="ui inverted teal button">Attendance</div>
+=======
+						            	<a href="#" class="attend"><div class="ui inverted teal button">Attendance</div></a>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 						          	</div>
 						        </div>
 						    </div>
@@ -100,16 +80,26 @@
 						    </div>
 
 						    <div class="content left-align">
+<<<<<<< HEAD
 						    	<a class="header">Attendance</a>
 						        <div class="meta">
 						        	<span class="date">Add a description add a description add a description</span>
+=======
+						    	<a href="#" class="header attend">Attendance</a>
+						        <div class="meta">
+						        	<span class="date">The most important thing, ATTENDANCE ,check it here.</span>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				<div class="ui four wide column">
+<<<<<<< HEAD
 					<div class="ui special cards">
+=======
+					<div class="ui special centered cards">
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
@@ -133,13 +123,21 @@
 					</div>
 				</div>
 				<div class="ui four wide column">
+<<<<<<< HEAD
 					<div class="ui special cards">
+=======
+					<div class="ui special centered cards">
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 					  	<div class="card">
 						    <div class="blurring dimmable image">
 						    <div class="ui dimmer">
 						        <div class="content">
 						        	<div class="center">
+<<<<<<< HEAD
 						            	<div class="ui inverted teal button">Feedbacks</div>
+=======
+						            	<a href="#" class="feed"><div class="ui inverted teal button">Feedbacks</div></a>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 						          	</div>
 						        </div>
 						    </div>
@@ -148,16 +146,26 @@
 						    </div>
 
 						    <div class="content left-align">
+<<<<<<< HEAD
 						    	<a class="header">Feedbacks</a>
 						        <div class="meta">
 						        	<span class="date">A place where you can challenge yourself to gain multiple knowledge.</span>
+=======
+						    	<a href="#" class="feed header">Feedbacks</a>
+						        <div class="meta">
+						        	<span class="date">Have a question in your mind. Don't be shy. Come forward and ask.</span>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
 				</div>
+<<<<<<< HEAD
 
+=======
+				</div>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 			</div>
 			</div>
 		</div>
@@ -174,9 +182,15 @@
 							<div class="ui sixteen wide column">
 								<a class="active">Dashboard</a><br>
 								<a href="{% url 'tasks' %}" class="nav-close">Task</a><br>
+<<<<<<< HEAD
 								<a href="#" class="nav-close">Attendance</a><br>
 								<a href="{% url 'resource' %}" class="nav-close">Resource</a><br>
 								<a href="#" class="nav-close">Feedback</a><br>
+=======
+								<a href="#" class="attend nav-close">Attendance</a><br>
+								<a href="{% url 'resource' %}" class="nav-close">Resource</a><br>
+								<a href="#" class="feed nav-close">Feedback</a><br>
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 								<a href="{% url 'auth:logout' %}?next={{ request.path }}" class="nav-close">Logout</a><br>		
 							</div>
 						</div>
@@ -185,29 +199,82 @@
 			</div>
 			<h1><i class="remove icon large burNav nav-close" style="color:white;"></i></h1>
 		</div>
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 	</nav>
 	<!-- nav end -->
 
-	<footer>
-		Made with ♥ by ACE
-	</footer>
+  <!-- attendance modal -->
+  <div class="ui basic modal attendance-modal">
+    <center>
+      <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
+      <div class="image content"> 
+      	<h1 class="quote-head" style="color:white;">Attendance History<br><span>9/25</span></h1>
+      	<h2 class="pri-color">
+      	
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+		<br>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+		<br>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+		<br>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+		<br>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
+      	</h2>
+        <a href="#" class="close-modal">Close</a>
+      </div>
+    </center>
+  </div>  
+  <!-- attendance modal ends -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
-	<script type="text/javascript">
-		$('.special.cards .image').dimmer({
-		  on: 'hover'
-		});
-		$(document).ready(function(){
-			$('#navOpen').click(function(){
-				$('nav') .transition('fade down'); 
-			});
-		});
-		$(document).ready(function(){
-			$('.nav-close').click(function(){
-				$('nav') .transition('fade down'); 
-			});
-		});	
-	</script>
-</body>
-</html>
+  <!-- attendance modal -->
+  <div class="ui basic modal feedback-modal">
+    <center>
+      <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
+      <div class="image content"> 
+      	<br>
+      	<form>
+      		<input type="text" class="feedback-user" placeholder="Title" name="title"><br><br>
+      		<textarea class="feedback-user-text" name="feedback" placeholder="Feedback Here"></textarea>
+      		<br><br>
+			<input type="submit" class="feedback-submit" name="submit" value="Submit">
+      	</form><br>
+        <a href="#" class="close-modal">Close</a>
+      </div>
+    </center>
+  </div>  
+  <!-- attendance modal ends -->
+
+<<<<<<< HEAD
+
+
+{% endblock %}
+
+	
+=======
+{% endblock %}
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec

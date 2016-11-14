@@ -1,13 +1,9 @@
 {% extends 'acelibraryapp/base.html' %}
 <<<<<<< HEAD
-
-{%block content %}
-				<h1 class="quote-head">Ace Task Manager<br><span>Ace Logic Bombs</span></h1>
-				<br><br><br>
-
 =======
 {% load staticfiles %}
 {% block main %}
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 <!-- {% load staticfiles %}
 {% if request.user.is_authenticated %}
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
@@ -17,69 +13,74 @@ Title : {{ task.title }}
 Description : {{task.text}}
 <br><br>
 {% endfor %} -->
-	<!-- ace task menu -->
+<<<<<<< HEAD
+{% block content %}
+				
+
+				<h1 class="quote-head">Resource: {{category.category}}<br><span>Ace Logic Bombs</span></h1>
+				<br><br><br>
+
+				{%for resource in resources %}
+
+=======
+
+	<!-- ace resource menu -->
 	<div class="ui container">
 		<div class="ui stackable grid">
 			<div class="ui row" style="padding:80px 0px;">
 			<div class="ui sixteen wide column" style="text-align:center;">
 				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
-				<h1 class="quote-head">Ace Task Manager<br><span>Ace Logic Bombs</span></h1>
+				<h1 class="quote-head">Resource: {{category.category}}<br><span>Ace Logic Bombs</span></h1>
 				<br><br><br>
+				{%for resource in resources %}
 >>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
-		{% for task in tasks %}
-
 				<div class="ui stackable grid">
 					<div class="ui sixteen wide column task">
 						<div class="ui card" ">
 						  <div class="card">
 							<div class="abs-Lang">
-								<div class="code-Lang centered"><center>C</center></div>
+								<div class="code-Lang centered"><center>A</center></div>
 							</div>
+						    <div class="content">
 <<<<<<< HEAD
-						
-						    <div class="content">
-						      <div class="header"><h1>{{task.title}}</h1></div>
-						      <div class="meta"><b>Published : {{task.published_date}}</b></div>
+						      <div class="header"><h1>{{resource.Course}}</h1></div>
+						      <div class="meta"><b>Difficulty: {{resource.Difficulty}}/10</b></div>
 						      <br>
 						      <div class="description">
-						        {{task.text}} 
-						      </div><br>
+									{{resource.Description}}
 =======
-						    <div class="content">
-						      <div class="header"><h1>{{task.title}}</h1></div>
-						      <div class="meta"><b>Published: {{task.published_date}}</b></div>
+						      <div class="header"><h1>{{resource.course}}</h1></div>
+						      <div class="meta"><b>Author: {{resource.author}}</b></div>
 						      <br>
 						      <div class="description">
-						      	{{task.text}}
-						      </div><br>
-						      <div class="meta"><b>Difficulty: 
-						      <i class="star yellow icon"></i>
-						      <i class="star yellow icon"></i>
-						      <i class="star icon"></i>
-						      <i class="star icon"></i>
-						      <i class="star icon"></i>
-						      </b></div><br>
+									{{resource.couse_des}}
 >>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
-						      <button class="ui blue inverted medium button task-submit">Submit Your Entry</button>
+						      </div><br>
+						      <button class="ui blue inverted medium button task-submit">View Resource</button>
 						      <br><br>
 						    </div>
 						  </div>
 						</div>
 					</div>
 				</div>
-
 <<<<<<< HEAD
-				{% endfor %}
-				
-	<!-- ace task menu end -->
 
+{% endfor %}
+
+
+				
 =======
+				{% endfor %}
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 			</div>
 			</div>
 		</div>
 	</div>
-	<!-- ace task menu end -->
-				{% endfor %}
+	<!-- ace resource menu end -->
+<<<<<<< HEAD
+
+=======
+S
 >>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec
 	<!-- nav -->
 	<nav class="transition hidden">
@@ -89,8 +90,7 @@ Description : {{task.text}}
 					<div class="ui stackable relaxed grid">
 						<div class="ui row">
 							<div class="ui sixteen wide column">
-								<a class="active">Task Manager</a><br>
-								<a href="#" class="nav-close">Task Score</a><br>
+								<a href="{% url 'resource' %}">Resources</a><br>
 								<a href="{% url 'home' %}" class="nav-close">Dashboard</a><br>
 								<a href="{% url 'auth:logout' %}?next={{ request.path }}" class="nav-close">Logout</a><br>	
 							</div>
@@ -102,5 +102,9 @@ Description : {{task.text}}
 		</div>
 	</nav>
 	<!-- nav end -->
+<<<<<<< HEAD
 
-{% endblock %}
+	{% endblock %}
+=======
+	{% endblock %}
+>>>>>>> 1eaccff4ddf20d6f6006902dcb5ebd5ec147acec

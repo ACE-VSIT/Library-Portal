@@ -414,14 +414,14 @@ nav .nav-rel {
 		line-height: 1;
 	}
 
-	.login-submit, .login-user {
+	.facebook-col, .google-col, .twitter-col {
 		width: 70%;
 	}
 }
 
 @media screen and (max-width:500px)
 {
-	.login-submit, .login-user {
+	.facebook-col, .google-col, .twitter-col {
 		width: 95%;
 	}
 }
