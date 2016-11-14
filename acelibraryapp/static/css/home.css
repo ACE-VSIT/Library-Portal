@@ -286,10 +286,6 @@ a.close-modal {
     cursor: default;
 }
 
-.ui.cards > .card > .image > img, .ui.card > .image > img {
-	width:290px;
-	height:225px;
-}
 
 @media screen and (max-width:900px)
 {
