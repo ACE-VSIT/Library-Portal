@@ -1,3 +1,4 @@
+
 {% extends 'acelibraryapp/base.html' %}
 {% load staticfiles %}
 {% block main %}
@@ -15,6 +16,7 @@
 				<br><br><br>
 
 				<div class="ui stackable grid">
+				{% for gg in categories %}
 				<div class="ui four wide column">
 					<div class="ui special centered cards">
 					  	<div class="card">
@@ -22,175 +24,7 @@
 						    <div class="ui dimmer">
 						        <div class="content">
 						        	<div class="center">
-						            	<a href="ux.html"><div class="ui inverted teal button">UX Design</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/ux.png' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="ux.html" class="header">UX Design</a>
-						        <div class="meta">
-						        	<span class="date">Learn how to enhance user satisfaction with your product by improving the usability and accessibility of the product.</span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="python.html"><div class="ui inverted teal button">Python</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/py.png' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="python.html" class="header">Python</a>
-						        <div class="meta">
-						        	<span class="date">Learn one of the most simple language, that has helped creating different domains of CS.<br><br></span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="web.html"><div class="ui inverted teal button">Web</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/web.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="web.html" class="header">Web</a>
-						        <div class="meta">
-						        	<span class="date">Get your ideas on the web before anyone else does it. Start learning Web development right here, right now.</span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="android.html"><div class="ui inverted teal button">Android</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/and.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="android.html" class="header">Android</a>
-						        <div class="meta">
-						        	<span class="date">Want to create your own android apps or even the next android? Learn everything you need to know here.<br><br></span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="csharp.html"><div class="ui inverted teal button">C#</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/csharp.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="csharp.html" class="header">C#</a>
-						        <div class="meta">
-						        	<span class="date">A full turing language up for grabs; with a whole lot of features & libraries you can play with.</span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="game.html"><div class="ui inverted teal button">Game Dev</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/game.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="game.html" class="header">Game Dev</a>
-						        <div class="meta">
-						        	<span class="date">Ever wondered how games work? Learn about them here.<br><br></span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="graphic.html"><div class="ui inverted teal button">Graphic Design</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/graphic.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="graphic.html" class="header">Graphics</a>
-						        <div class="meta">
-						        	<span class="date">Learn Graphic Designing, because text isn't enough, right?<br><br></span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="av.html"><div class="ui inverted teal button">Audio Visual</div></a>
+						            	<a href="{% url 'resource_details' pk=gg.category %}" ><div class="ui inverted teal button">{{gg.category}}</div></a>
 						          	</div>
 						        </div>
 						    </div>
@@ -199,14 +33,15 @@
 						    </div>
 
 						    <div class="content left-align">
-						    	<a href="av.html" class="header">Audio Visual</a>
+						    	<a href="{% url 'resource_details' pk=gg.category %}" class="header">{{gg.category}}</a>
 						        <div class="meta">
-						        	<span class="date">Graphics don't seem satisfactory,learn the AV effets.<br><br></span>
+						        	<span class="date">{{gg.description}}</span>
 						      	</div>
 						    </div>
 					  	</div>
 					</div>
 				</div>
+				{% endfor %}
 				</div>
 
 			</div>
