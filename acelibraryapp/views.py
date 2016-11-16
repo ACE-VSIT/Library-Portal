@@ -47,10 +47,6 @@ class Authentication(View):
 
 class HomePage(Authentication):
 	
-	def __init__(self):
-		self.user = Authentication.data
-		self.valid = self.user['valid']
-
 	def get(self, request):
 
 		name = str(request.user.first_name) + " " + str(request.user.last_name)
@@ -58,16 +54,16 @@ class HomePage(Authentication):
 		if not self.isMember(name):
 			auth_logout(request)
 			return redirect('/')
+
+		auth = Authentication()
+		self.valid = Authentication.fetchDetails(auth,name)['valid']
+
 		return render(request, 'acelibraryapp/home.html', {'valid':self.valid})
 
 
 class ResourceView(Authentication):
 
-	def __init__(self):
-		
-		self.user = Authentication.data
-		self.valid = self.user['valid']
-
+	
 	def fetch_categories(self):
 		categories = Categories.objects.all()
 		return categories
@@ -75,16 +71,14 @@ class ResourceView(Authentication):
 	def get(self, request):
 
 		categories = self.fetch_categories()
+		name = str(request.user.first_name) + " " + str(request.user.last_name)
+		auth = Authentication()
+		self.valid = Authentication.fetchDetails(auth,name)['valid']
 
 		return render(request,'acelibraryapp/resource.html',{'valid':self.valid, 'categories' : categories})
 
 
 class TaskView(Authentication):
-
-	def __init__(self):
-			
-		self.user = Authentication.data
-		self.valid = self.user['valid']
 
 	def fetch_tasks(self):  
 		tasks = Tasks.objects.filter(approval_status=True)
@@ -93,58 +87,40 @@ class TaskView(Authentication):
 	def get(self, request):
 		
 		tasks = self.fetch_tasks()
+		name = str(request.user.first_name) + " " + str(request.user.last_name)
+		auth = Authentication()
+		self.valid = Authentication.fetchDetails(auth,name)['valid']
 		
 		return render(request,'acelibraryapp/tasks.html',{'valid':self.valid, 'tasks':tasks})
 
 
-
+'''
 class ResourceDetails(ResourceView):
-
-	def __init__(self):
-
-		self.user = Authentication.data
-		self.valid = self.user['valid']
 
 
 	def fetch_resource(self,string):
 		resource = get_object_or_404(Resources, couse_diff=string)
 		return resource
-
 	
 	def get(self, request):
 
+		name = str(request.user.first_name) + " " + str(request.user.last_name)
+		auth = Authentication()
+		self.valid = Authentication.fetchDetails(auth,name)['valid']
+
 		return render(request, 'acelibraryapp/resource_detail.html',{'valid':self.valid})
 
-
-'''
-@login_required(login_url='/')
-def home(request):
-	return render(request, 'acelibraryapp/home.html')
 '''
 '''
-def index(request):
-	if request.user.is_active:
-		return redirect(home)
-	return render(request,'acelibraryapp/index.html',{'user': request.user,'user': request.user})
-@login_required(login_url='/')
-def home(request):
-	return render(request, 'acelibraryapp/home.html')
-@login_required(login_url='/')
-def tasks(request):
-	# Insert query to get approved tasks
-	return render(request,'acelibraryapp/tasks.html',{})
 '''
-'''
-@login_required(login_url='/')
-def python(request):
-	name = str(request.user.first_name) + " " + str(request.user.last_name)
-	auth = Authentication()
-	return render(request,'acelibraryapp/python.html',Authentication.fetchDetails(auth,name))
-'''
-
 
 def resource_details(request, pk):
 	
 	category = get_object_or_404(Categories, pk=pk)
-	resources = Resources.objects.filter(cat=category)	
-	return render(request, 'acelibraryapp/resource_detail.html', {'resources': resources, 'category':category})
+	resources = Resources.objects.filter(Category=category)	
+	
+	name = str(request.user.first_name) + " " + str(request.user.last_name)
+	auth = Authentication()
+	valid = Authentication.fetchDetails(auth,name)['valid']
+	
+	return render(request, 'acelibraryapp/resource_detail.html', {'resources': resources, 'category':category,'valid':valid})

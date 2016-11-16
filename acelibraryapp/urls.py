@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-from acelibraryapp.views import TaskView,Authentication, HomePage,ResourceView, ResourceDetails
+from acelibraryapp.views import TaskView,Authentication, HomePage,ResourceView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
