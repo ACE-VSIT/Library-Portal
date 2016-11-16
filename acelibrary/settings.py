@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'acelibraryapp',
     'social.apps.django_app.default',
+    'multiselectfield'
 ]
 
 MIDDLEWARE = [

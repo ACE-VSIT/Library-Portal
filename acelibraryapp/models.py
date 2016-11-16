@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -21,23 +21,6 @@ class Student(models.Model):
         ordering = ['name']
 
 '''
-id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `oauth_uid` bigint(20) unsigned NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `api` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `gender` varchar(50) NOT NULL,
-  `pic_square` varchar(255) NOT NULL,
-  `course` varchar(10) DEFAULT NULL,
-  `semester` varchar(10) DEFAULT NULL,
-  `section` varchar(2) DEFAULT NULL,
-  `phone` varchar(12) DEFAULT NULL,
-  `valid` int(2) DEFAULT '0',
-
-
-
-'''
-
 class AceMembers(models.Model):
 
     id = models.IntegerField(primary_key=True,default=0)
@@ -54,7 +37,6 @@ class AceMembers(models.Model):
     valid = models.PositiveIntegerField(default=0)
 
 
-
 '''
 class User(models.Model):
 
@@ -65,7 +47,6 @@ class User(models.Model):
     domain_choices= (('a','Programming'),('b','Web Development'),('c','Graphic Desgning'),('d','A/V Editing'),('e','Other'))
 
     domain = models.CharField(max_length=1,choices = domain_choices)
-'''
 
 
 class Tasks(models.Model):
@@ -134,29 +115,31 @@ class Resources(models.Model):
 #ds
 
 
-'''
 
+'''
 class Solutions(models.Model)
     #Task if ( foreign key), solution , submitted by(defaut shud be autehnticated user),date_of submission
-
-
 '''
+
+class Event(models.Model):
+    
+    code = models.CharField(primary_key=True, max_length=20)
+    name = models.CharField(max_length=200)
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.name
+
+
 class Attendance(models.Model):
-    person_name = models.CharField(max_length=200)                
-    attendance_status =   models.BooleanField(default=False)                                   
 
-
-    def _str_(self):
-        return self.attendance_status        
-
-
-class EventNameDate(models.Model):
-    event_name = models.CharField(max_length=200)
-    date_id = models.IntegerField(default=0)
-    created_date = models.DateTimeField(default=timezone.now)
+    event_id = models.ForeignKey('Event')
+    member_choices= (('a','Ashish'),('b','Gaurav'),('c','Aditya'),('d','Coder'),('e','Paan'))
+    attended = MultiSelectField(choices=member_choices, max_choices=3)
+    #name = models.CharField(max_length=200)     #Name of member
+    #events = models.CharField(max_length=1000)  # Comma separated list of event codes
+    #attendance =  models.PositiveIntegerField(default=0)
 
 
 
-    def record(self):
-        self.created_date = timezone.now()
-        self.save()
+
