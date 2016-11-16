@@ -12,6 +12,7 @@ from .models import Tasks, Resources, Categories
 
 # Create your views here.
 
+a=5
 class Authentication(View):
 	
 	data = {}
@@ -113,7 +114,7 @@ class ResourceDetails(ResourceView):
 '''
 '''
 '''
-
+@login_required(login_url='/')
 def resource_details(request, pk):
 	
 	category = get_object_or_404(Categories, pk=pk)

@@ -17,6 +17,6 @@ class SampleAdmin(admin.ModelAdmin):
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('Category','Course','Author','Difficulty','URL', 'approval_status')
+    list_display = ('Category','Course','Author','URL', 'approval_status')
 
 admin.site.register(Resources, BookAdmin)

@@ -53,6 +53,7 @@ class Tasks(models.Model):
     
     title = models.CharField(max_length=69)
     text = models.TextField()
+    difficulty = models.IntegerField(default=1,validators=[MaxValueValidator(10), MinValueValidator(1)])
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     approval_status = models.BooleanField(default=False)
@@ -102,7 +103,6 @@ class Resources(models.Model):
     #category,url,topic,description 
     Category = models.ForeignKey('Categories')
     Course = models.CharField(max_length=30)
-    Difficulty = models.IntegerField(default=1,validators=[MaxValueValidator(10), MinValueValidator(1)])  
     Description = models.TextField(max_length=50)
     URL = models.CharField(max_length=50)
     Author = models.CharField(max_length=30)

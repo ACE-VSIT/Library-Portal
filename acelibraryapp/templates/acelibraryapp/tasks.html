@@ -1,6 +1,7 @@
 {% extends 'acelibraryapp/base.html' %}
 {% load staticfiles %}
 {% block main %}
+{% load tag_library %}
 <!-- {% load staticfiles %}
 {% if request.user.is_authenticated %}
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
@@ -34,12 +35,14 @@ Description : {{task.text}}
 						      <div class="description">
 						      	{{task.text}}
 						      </div><br>
-						      <div class="meta"><b>Difficulty: 
+						      <div class="meta"><b>Difficulty:
+						      {% for x in task.difficulty|to_int %}
 						      <i class="star yellow icon"></i>
-						      <i class="star yellow icon"></i>
-						      <i class="star icon"></i>
-						      <i class="star icon"></i>
-						      <i class="star icon"></i>
+						      {% endfor %}
+						      {% for x in task.difficulty|to_remaining %}
+						     <i class="star icon"></i>
+						      {% endfor %}
+						      
 						      </b></div><br>
 						      <button class="ui blue inverted medium button task-submit">Submit Your Entry</button>
 						      <br><br>
