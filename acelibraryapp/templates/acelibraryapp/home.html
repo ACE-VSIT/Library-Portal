@@ -144,62 +144,82 @@
 
   <!-- attendance modal -->
 
-  <div class="ui basic modal attendance-modal">
-    <center>
-      <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
-      <div class="image content"> 
-      	<h1 class="quote-head" style="color:white;">Attendance History<br><span>{{count}}/{{total}}</span></h1>
+  <div class="attendance-modal attendance">
+	<div class="swiper-container">  
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide" style="background:rgba(0, 0, 0, 0.9);">
+	        	<div class="display">
+				    <img src="{% static 'img/logo.png' %}" class="img-logo-modal">
+				    <h1 class="quote-head" style="color:white;">Attendance History<br><span>3/5 Attendance</span></h1>
+				    <br>
+				    <button class="ui teal inverted medium button memType">swipe or scroll to view more</button>
+				    <h1><i class="remove icon large burNav close-attend" style="color:white;"></i></h1> 
+			    </div>   	
+	        </div>
 
-      	{% if attended %}
-      	Dear member ,You've attended following events/meetings :D :
-      	<br>
-      	{% else %}
-      	We miss you <3 
+	        <!-- absent template -->
+	        <div class="swiper-slide absent">
+	        	<div class="display marg">
+	        		<h1><i class="icon minus circle white"></i></h1>
+	        		<h2>Lan Gaming.</h2>
+	        		<p>OOPS! Its seams like your were absent for this event. <br>See you in next event.</p>
 
-      	{% endif %}
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        <!-- absent template end -->
 
+	        <!-- present template -->
+	        <div class="swiper-slide present">
+	        	<div class="display marg">
+	        		<h1><i class="icon check circle white"></i></h1>
+	        		<h2>Git Workshop.</h2>
+	        		<p>Nice Folks! Its seams like you have attended the event.<br>Hope yoy enjoyed it..</p>
 
-      	{%for x in attended %}
-		<li> {{x}} </li>
-      	{% endfor %}
-      	<h2 class="pri-color">
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        <!-- present template end -->
 
-      	{%for x in attended %}
-      	<span data-tooltip={{x}} data-inverted=""><i class="square round icon"></i></span>
-      	{% endfor %}
+	        <!-- present template -->
+	        <div class="swiper-slide present">
+	        	<div class="display marg">
+	        		<h1><i class="icon check circle white"></i></h1>
+	        		<h2>Git Workshop.</h2>
+	        		<p>Nice Folks! Its seams like you have attended the event.<br>Hope yoy enjoyed it..</p>
 
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-		<br>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-		<br>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square round icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-		<br>
-      	
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-		<br>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	<span data-tooltip="10th June 2016" data-inverted=""><i class="square outline icon"></i></span>
-      	</h2>
-        <a href="#" class="close-modal">Close</a>
-      </div>
-    </center>
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        <!-- present template end -->
+
+	        <!-- absent template -->
+	        <div class="swiper-slide absent">
+	        	<div class="display marg">
+	        		<h1><i class="icon minus circle white"></i></h1>
+	        		<h2>Lan Gaming.</h2>
+	        		<p>OOPS! Its seams like your were absent for this event. <br>See you in next event.</p>
+
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        <!-- absent template end -->
+
+	        <!-- present template -->
+	        <div class="swiper-slide present">
+	        	<div class="display marg">
+	        		<h1><i class="icon check circle white"></i></h1>
+	        		<h2>Git Workshop.</h2>
+	        		<p>Nice Folks! Its seams like you have attended the event.<br>Hope yoy enjoyed it..</p>
+
+	        		<h3><i class="remove icon large burNav close-attend" style="color:white;"></i></h3> 
+	        	</div>
+	        </div>
+	        <!-- present template end -->
+	    </div>
+	        <!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
   </div>  
   <!-- attendance modal ends -->
 
