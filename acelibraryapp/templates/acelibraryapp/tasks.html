@@ -32,18 +32,21 @@ Description : {{task.text}}
 						      <div class="header"><h1>{{task.title}}</h1></div>
 						      <div class="meta"><b>Published: {{task.published_date}}</b></div>
 						      <br>
+						      
 						      <div class="description">
 						      	{{task.text}}
 						      </div><br>
 						      <div class="meta"><b>Difficulty:
+						      
 						      {% for x in task.difficulty|to_int %}
 						      <i class="star yellow icon"></i>
 						      {% endfor %}
+						      
 						      {% for x in task.difficulty|to_remaining %}
 						     <i class="star icon"></i>
 						      {% endfor %}
 						      
-						      </b></div><br>
+						      </br></div><br>
 						      <button class="ui blue inverted medium button task-submit">Submit Your Entry</button>
 						      <br><br>
 						    </div>

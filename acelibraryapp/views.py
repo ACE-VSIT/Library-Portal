@@ -8,11 +8,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views import View
 import json
-from .models import Tasks, Resources, Categories
+from .models import Tasks, Resources, Categories, Event, Attendance
 
 # Create your views here.
-
-a=5
 class Authentication(View):
 	
 	data = {}
@@ -47,6 +45,20 @@ class Authentication(View):
 
 
 class HomePage(Authentication):
+
+
+	def fetch_attendance(self, id):
+	
+		events = Event.objects.all()
+		events = [x.code for x in events]
+		total = len(events)
+		attendance = Attendance.objects.all()
+		data=[ (x.attended,x.event_id) for x in attendance]
+		attended = [x[1] for x in data if str(id) in x[0]]
+		count = len(attended)
+	
+		return count,total,attended
+	
 	
 	def get(self, request):
 
@@ -58,8 +70,10 @@ class HomePage(Authentication):
 
 		auth = Authentication()
 		self.valid = Authentication.fetchDetails(auth,name)['valid']
+		id = Authentication.fetchDetails(auth,name)['id']
+		count,total,attended = self.fetch_attendance(id)
 
-		return render(request, 'acelibraryapp/home.html', {'valid':self.valid})
+		return render(request, 'acelibraryapp/home.html', {'valid':self.valid,'attended':attended,'total':total,'count':count})
 
 
 class ResourceView(Authentication):

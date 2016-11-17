@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 from multiselectfield import MultiSelectField
+import json
 
 # Create your models here.
 
@@ -68,22 +69,6 @@ class Tasks(models.Model):
         return self.title
 
 
-class Events(models.Model):
-
-
-    ID = models.TextField(primary_key = True)
-    date = models.DateTimeField(default=timezone.now)
-    name = models.TextField(max_length=30)
-    description = models.TextField(blank=True,null=True)
-
-    def __init(self):
-        self.date=timezone.now()
-        self.save()
-
-    def _str_(self):
-        return self.name
-
-
 class Categories(models.Model):
 
 
@@ -133,12 +118,17 @@ class Event(models.Model):
 
 class Attendance(models.Model):
 
+    import operator
+
+    with open('acelibraryapp/ace_membors.json') as json_data:
+        data = json.load(json_data)
+
+    names = [(name['id'],name['name']) for name in data if(name['valid']==4 or name['valid']==3)]
+    names.sort(key=operator.itemgetter(1))
     event_id = models.ForeignKey('Event')
-    member_choices= (('a','Ashish'),('b','Gaurav'),('c','Aditya'),('d','Coder'),('e','Paan'))
-    attended = MultiSelectField(choices=member_choices, max_choices=3)
-    #name = models.CharField(max_length=200)     #Name of member
-    #events = models.CharField(max_length=1000)  # Comma separated list of event codes
-    #attendance =  models.PositiveIntegerField(default=0)
+    member_choices= names
+    attended = MultiSelectField(choices=member_choices, max_choices=len(names))
+
 
 
 
