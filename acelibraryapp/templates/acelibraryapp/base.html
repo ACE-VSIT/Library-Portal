@@ -15,13 +15,38 @@
   <meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
   <link rel="icon" href="{% static 'img/logo.png' %}"> 
   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css" />
-    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
 </head>
 <body>
 
+<style>
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
 
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+</style>
 
   <!-- Hero Bg tab -->
   <div class="ui stackable grid hero-hg">
@@ -59,10 +84,26 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var swiper = new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true
+      });
+    });
+  </script>
   <script type="text/javascript">
     $('.special.cards .image').dimmer({
       on: 'hover'
     });
+    function lol() {
+      $(document).ready(function(){
+        $('.attendance-modal').hide();
+      });
+    }
+    lol();
     $(document).ready(function(){
       $('#navOpen').click(function(){
         $('nav') .transition('fade down'); 
@@ -75,10 +116,10 @@
     }); 
     $(document).ready(function(){
       $('.attend').click(function(){
-        $('.ui.basic.modal.attendance-modal').modal('show'); 
+        $('.attendance-modal').slideDown(100); 
       });
-      $('.close-modal').click(function(){
-        $('.ui.basic.modal.attendance-modal').modal('hide'); 
+      $('.close-attend').click(function(){
+        $('.attendance-modal').slideUp(100); 
       });
     });
     $(document).ready(function(){
