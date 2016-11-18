@@ -17,6 +17,8 @@ body {
 
 html, body {
 	overflow-x: hidden;
+	position: relative;
+	height: 100%;
 }
 
 a, a:hover, a:focus, a:clicked {
@@ -220,7 +222,7 @@ footer {
 .img-logo-modal{
 	width:100px;
 	text-align: center;
-	padding-bottom: 40px;
+	padding-bottom: 0px;
 }
 
 a.close-modal {
@@ -286,6 +288,66 @@ a.close-modal {
     cursor: default;
 }
 
+.attendance {
+	width:100%;
+	height: 100%;
+	position: fixed;
+	top:0px;
+	left:0px;
+	display: flex;
+}
+
+.display {
+	display: block;
+}
+
+.display.marg {
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: left;
+}
+
+.display.marg h1 {
+	font-size: 90px;
+}
+
+.display.marg h2 {
+	font-family: sans-serif;
+  	font-size: 60px;
+  	font-weight: 600;
+  	color: white;
+  	line-height: 1.2;
+}
+
+.display.marg p {
+	font-family: sans-serif;
+  	font-size: 23px;
+  	font-weight: 100;
+  	color: white;
+  	line-height: 1.2;
+}
+
+.swiper-pagination-bullet {
+	background: white;
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	background: transparent;
+	border:white 2px solid;
+}
+
+.swiper-slide.present {
+	background: #77b120;
+}
+
+.swiper-slide.absent {
+	background:#d0021b;
+}
+
+.swiper-slide.present, .swiper-slide.absent {
+	justify-content: left !important;
+}
 
 @media screen and (max-width:900px)
 {
@@ -312,6 +374,18 @@ a.close-modal {
 	.feedback-user-text {
 		width: 70%;
 		height: 150px;
+	}
+	.swiper-pagination {
+		display: none;
+	}
+	..display.marg h1 {
+		font-size: 80px;
+	}
+	.display.marg h2 {
+		font-size: 50px;
+	}
+	.display.marg p {
+		font-size: 18px;
 	}
 }
 

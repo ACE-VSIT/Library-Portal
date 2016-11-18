@@ -50,14 +50,19 @@ class HomePage(Authentication):
 	def fetch_attendance(self, id):
 	
 		events = Event.objects.all()
-		events = [x.code for x in events]
+		#events = [x.code for x in events]
 		total = len(events)
 		attendance = Attendance.objects.all()
 		data=[ (x.attended,x.event_id) for x in attendance]
 		attended = [x[1] for x in data if str(id) in x[0]]
+
+		not_attended = Event.objects.exclude(name__in=attended)
+		attended = Event.objects.filter(name__in=attended)
+
+
 		count = len(attended)
 	
-		return count,total,attended
+		return count,total,not_attended,attended
 	
 	
 	def get(self, request):
@@ -71,9 +76,9 @@ class HomePage(Authentication):
 		auth = Authentication()
 		self.valid = Authentication.fetchDetails(auth,name)['valid']
 		id = Authentication.fetchDetails(auth,name)['id']
-		count,total,attended = self.fetch_attendance(id)
+		count,total,not_attended,attended = self.fetch_attendance(id)
 
-		return render(request, 'acelibraryapp/home.html', {'valid':self.valid,'attended':attended,'total':total,'count':count})
+		return render(request, 'acelibraryapp/home.html', {'valid':self.valid,'total':total,'count':count,'not_attended':not_attended,'attended':attended})
 
 
 class ResourceView(Authentication):
