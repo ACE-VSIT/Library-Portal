@@ -1,7 +1,7 @@
 from lxml import html
 import requests
 
-def fetchData(username):
+def fetchGithub(username):
 	
 	url = 'https://github.com/ACE-VSIT/Library-Portal/graphs/contributors'
 	page = requests.get(url)
