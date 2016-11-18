@@ -100,8 +100,9 @@ Or you could use PowerShell instead of command prompt
 
     
 
-    
+## Licence
 
+MIT
 
 
 
