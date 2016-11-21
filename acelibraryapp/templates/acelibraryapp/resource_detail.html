@@ -1,6 +1,7 @@
 {% extends 'acelibraryapp/base.html' %}
 {% load staticfiles %}
 {% block main %}
+{% load tag_library %}
 <!-- {% load staticfiles %}
 {% if request.user.is_authenticated %}
 {% else %}<a href="{% url django.contrib.auth.login %}">Login</a>{% endif %} -->
@@ -20,27 +21,27 @@ Description : {{task.text}}
 				<h1 class="quote-head">Resource: {{category.category}}<br><span>Ace Logic Bombs</span></h1>
 				<br><br><br>
 				{%for resource in resources %}
+
 				<div class="ui stackable grid">
-					<div class="ui sixteen wide column task">
-						<div class="ui card" ">
-						  <div class="card">
-							<div class="abs-Lang">
-								<div class="code-Lang centered"><center>A</center></div>
-							</div>
-						    <div class="content">
-						      <div class="header"><h1>{{resource.Course}}</h1></div>
-						      <div class="meta"><b>Author: {{resource.Author}}</b></div>
-						      <br>
-						      <div class="description">
-									{{resource.Description}}
-						      </div><br>
-						      <button class="ui blue inverted medium button task-submit">View Resource</button>
-						      <br><br>
-						    </div>
-						  </div>
+					 	<div id="dabba">	
+						<span class="image"><img src="{% static 'img/av.jpg' %}"></span>
+						<div id="dabba_content">
+						<span class="name"> {{resource.Course}} </span>
+						<span class="line"></span>
+						<span class="desc"> {{resource.Description}}</span>
+						<span class="type"> <strong>Author:</strong> {{resource.Author}} </span>
+						<span class="type"> <strong>Course Type:</strong> {{resource.Type}} </span>
+						<span class="diff"> <strong>Difficulty:</strong>
+					      {% for x in resource.difficulty|to_int %}
+						      <i class="star yellow icon"></i>
+						      {% endfor %}    
+						      {% for x in resource.difficulty|to_remaining %}
+						     <i class="star icon"></i>
+						      {% endfor %}
+					      <span class="line"></span>
+						<a href={{resource.URL}} target="_blank"><button class="ui blue inverted custom medium button task-submit"> View Resources </button></a>
 						</div>
 					</div>
-				</div>
 				{% endfor %}
 			</div>
 			</div>

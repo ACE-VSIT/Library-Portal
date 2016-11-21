@@ -95,7 +95,7 @@ class ResourceView(Authentication):
 		auth = Authentication()
 		self.valid = Authentication.fetchDetails(auth,name)['valid']
 
-		return render(request,'acelibraryapp/resource.html',{'valid':self.valid, 'categories' : categories})
+		return render(request,'acelibraryapp/resource.html',{'valid':self.valid, 'categories' : categories,'count':len(categories)})
 
 
 class TaskView(Authentication):
