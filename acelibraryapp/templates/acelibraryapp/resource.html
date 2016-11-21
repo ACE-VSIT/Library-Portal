@@ -13,35 +13,15 @@
 			<div class="ui sixteen wide column" style="text-align:center;">
 				<h3 style="color:rgba(0, 0, 0, 0.50)">EAT SLEEP CODE</h3>
 				<h1 class="quote-head">Ace Resource Manager<br><span>Ace Logic Bombs</span></h1>
-				<br><br><br>
-
-				<div class="ui stackable grid">
-				{% for gg in categories %}
-				<div class="ui four wide column">
-					<div class="ui special centered cards">
-					  	<div class="card">
-						    <div class="blurring dimmable image">
-						    <div class="ui dimmer">
-						        <div class="content">
-						        	<div class="center">
-						            	<a href="{% url 'resource_details' pk=gg.category %}" ><div class="ui inverted teal button">{{gg.category}}</div></a>
-						          	</div>
-						        </div>
-						    </div>
-						    
-						    <img src="{% static 'img/av.jpg' %}">
-						    </div>
-
-						    <div class="content left-align">
-						    	<a href="{% url 'resource_details' pk=gg.category %}" class="header">{{gg.category}}</a>
-						        <div class="meta">
-						        	<span class="date">{{gg.description}}</span>
-						      	</div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				{% endfor %}
+				<br><br><br>				        
+					 
+					 {% for cat in categories %}
+					
+					 <div id="language" class="color">
+						<span>{{cat.category}}</span>
+						<a href="{% url 'resource_details' pk=cat.category %}"><p>{{cat.count}} Available Resources </p> </a>
+					 </div>
+					 {% endfor %}
 				</div>
 
 			</div>

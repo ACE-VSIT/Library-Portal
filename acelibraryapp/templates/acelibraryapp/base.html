@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ace Library Portal @ VIPS">
   <meta property="og:title" content="Portal -- VIPS" />
-  <meta property="og:description" content="An portal to find coding and tech stuff built by ACE members at VIPS." />
+  <meta property="og:description" content="A portal to find coding and tech stuff built by ACE members at VIPS." />
   <link rel="icon" href="{% static 'img/logo.png' %}"> 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css" />
@@ -79,7 +79,7 @@
   {% block main %} {% endblock %}
 
   <footer>
-    Made with ♥ by ACE
+    Made with <strong>♥</strong> by ACE
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
@@ -131,5 +131,16 @@
       });
     });
   </script>
+
+            <script type="text/javascript">
+$(function() {
+    $(".color").each(function() {
+        var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) +20 ) + ',' + (Math.floor((256-199)*Math.random()) +30) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ')';
+         $(this).css("background-color", hue);
+    });
+});
+
+
+          </script>
 </body>
 </html>

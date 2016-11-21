@@ -82,23 +82,27 @@ class Categories(models.Model):
     def __str__(self) :
         return self.category
 
+    def count(self):
+        resources = Resources.objects.filter(Category=self.category)
+        return len(resources) 
+
 
 class Resources(models.Model):
 
     #category,url,topic,description 
     Category = models.ForeignKey('Categories')
     Course = models.CharField(max_length=30)
-    Description = models.TextField(max_length=50)
-    URL = models.CharField(max_length=50)
+    Type = models.CharField(max_length=50)
+    Description = models.TextField(max_length=500)
+    URL = models.CharField(max_length=150)
     Author = models.CharField(max_length=30)
     approval_status = models.BooleanField(default=False)
+    difficulty = models.IntegerField(default=1,validators=[MaxValueValidator(10), MinValueValidator(1)])
+    imgUrl = models.CharField(max_length=100)
 
  
     def __unicode__(self) :
         return self.Course
-
-#ds
-
 
 
 '''
@@ -128,6 +132,10 @@ class Attendance(models.Model):
     event_id = models.ForeignKey('Event')
     member_choices= names
     attended = MultiSelectField(choices=member_choices, max_choices=len(names))
+
+
+    def __str__(self):
+        return self.event_id.name +"   (" +  str(len(self.attended)) + " participated )"
 
 
 
