@@ -454,12 +454,12 @@ a.close-modal {
 
 #language{
 	display: inline-block;
-	width: 250px;
+	width: 320px;
 	height: 250px;
-	
 	margin: 15px;
 	border-radius: 20px;
 	transition: all .6s ease;
+	box-shadow: 0px 6px 5px -3px rgba(0,0,0,0.6);
 }
 #language span{
 	display: block;;
@@ -477,5 +477,6 @@ a.close-modal {
 }
 
 #language:hover{
-	 transform: translateY(-20px);
+	 transform: translateY(-7px);
+	 box-shadow: 0px 15px 5px -5px rgba(0,0,0,0.4);
 }
