@@ -145,6 +145,10 @@ a, a:hover, a:focus, a:clicked {
 	transition:0.5s; 
 }
 
+.image.content {
+	max-width:100%;
+}
+
 nav {
 	background: #52c59a;
 	width:100%;
